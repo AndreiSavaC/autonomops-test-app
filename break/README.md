@@ -67,9 +67,9 @@ Restore: remove the extra indent.
 Edit `.github/workflows/ci.yml` — reference an undefined variable in the docker job:
 
 ```yaml
-      - name: Push Docker image
-        run: |
-          docker push $UNDEFINED_VAR/$IMAGE_NAME:latest
+- name: Push Docker image
+  run: |
+    docker push $UNDEFINED_VAR/$IMAGE_NAME:latest
 ```
 
 Expected pipeline step to fail: **Push Docker image** in the `docker` job (empty registry host).

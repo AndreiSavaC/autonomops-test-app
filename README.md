@@ -25,13 +25,14 @@ dotnet run --project src/AutonomOpsTestApp
 
 Set the following **repository variable** in GitHub → Settings → Variables → Actions:
 
-| Variable | Value |
-|----------|-------|
+| Variable        | Value                |
+| --------------- | -------------------- |
 | `REGISTRY_HOST` | `<your-LAN-IP>:5000` |
 
 ## Injecting failures
 
 See [break/README.md](break/README.md) for step-by-step instructions to reproduce:
+
 - NuGet version conflict
 - Failing unit test
 - Invalid workflow YAML

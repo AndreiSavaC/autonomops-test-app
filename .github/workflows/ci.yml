@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  REGISTRY: ${{ vars.REGISTRY_HOST }}   # set in repo vars: e.g. 192.168.1.100:5000
+  REGISTRY: ${{ vars.REGISTRY_HOST }} # set in repo vars: e.g. 192.168.1.100:5000
   IMAGE_NAME: autonomops-test-app
 
 jobs:
