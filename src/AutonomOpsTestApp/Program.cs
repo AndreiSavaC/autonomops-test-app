@@ -8,5 +8,6 @@ Console.WriteLine(result.IsSuccess
     ? $"[OK] {result.Message}"
     : $"[FAIL] {result.Message}");
 
+
 var health = svc.CheckHealth("api-gateway", uptimeSeconds: 60);
 Console.WriteLine($"[HEALTH] {health.ServiceName} → {health.Status}: {health.Message}");
