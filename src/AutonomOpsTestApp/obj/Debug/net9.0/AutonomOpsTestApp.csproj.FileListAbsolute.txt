@@ -1,0 +1,15 @@
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/bin/Debug/net9.0/AutonomOpsTestApp
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/bin/Debug/net9.0/AutonomOpsTestApp.deps.json
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/bin/Debug/net9.0/AutonomOpsTestApp.runtimeconfig.json
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/bin/Debug/net9.0/AutonomOpsTestApp.dll
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/bin/Debug/net9.0/AutonomOpsTestApp.pdb
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/obj/Debug/net9.0/AutonomOpsTestApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/obj/Debug/net9.0/AutonomOpsTestApp.AssemblyInfoInputs.cache
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/obj/Debug/net9.0/AutonomOpsTestApp.AssemblyInfo.cs
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/obj/Debug/net9.0/AutonomOpsTestApp.csproj.CoreCompileInputs.cache
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/obj/Debug/net9.0/AutonomOpsTestApp.sourcelink.json
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/obj/Debug/net9.0/AutonomOpsTestApp.dll
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/obj/Debug/net9.0/refint/AutonomOpsTestApp.dll
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/obj/Debug/net9.0/AutonomOpsTestApp.pdb
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/obj/Debug/net9.0/AutonomOpsTestApp.genruntimeconfig.cache
+/home/andrei/Desktop/disertatie/autonomops-test-app/src/AutonomOpsTestApp/obj/Debug/net9.0/ref/AutonomOpsTestApp.dll
