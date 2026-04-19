@@ -1,11 +1,10 @@
-﻿namespace AutonomOpsTestApp.Tests;
+namespace AutonomOpsTestApp.Tests;
 
 public class UnitTest1
 {
     [Fact]
-    public void Test1()
+    public void PlaceholderTest_AlwaysPasses()
     {
-
-
+        Assert.True(true);
     }
 }

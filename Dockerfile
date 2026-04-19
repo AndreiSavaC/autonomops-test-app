@@ -1,8 +1,10 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
+COPY ["AutonomOpsTestApp.sln", "."]
 COPY ["src/AutonomOpsTestApp/AutonomOpsTestApp.csproj", "src/AutonomOpsTestApp/"]
-RUN dotnet restore "src/AutonomOpsTestApp/AutonomOpsTestApp.csproj"
+COPY ["tests/AutonomOpsTestApp.Tests/AutonomOpsTestApp.Tests.csproj", "tests/AutonomOpsTestApp.Tests/"]
+RUN dotnet restore
 
 COPY . .
 WORKDIR "/src/src/AutonomOpsTestApp"
@@ -11,4 +13,8 @@ RUN dotnet publish "AutonomOpsTestApp.csproj" -c Release -o /app/publish /p:UseA
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
+
+# BUG: this production config file was never committed to the repository
+COPY config/appsettings.prod.json ./config/
+
 ENTRYPOINT ["dotnet", "AutonomOpsTestApp.dll"]

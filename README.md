@@ -1,40 +1,42 @@
-# autonomops-test-app
+# AutonomOps Test App
 
-A minimal .NET 9 console app used as the **Pipeline Agent test target** for [AutonomOps](https://github.com/your-org/autonomops).
-
-The CI pipeline (build → test → docker build+push) is designed with injectable failure scenarios to validate the Pipeline Agent's autonomous fix loop.
+A minimal .NET 9 application used to validate the **AutonomOps Pipeline Agent**.
 
 ## Structure
 
 ```
-src/AutonomOpsTestApp/       ← Console app with DeploymentService
-tests/AutonomOpsTestApp.Tests/ ← xUnit tests (9 tests)
-.github/workflows/ci.yml     ← CI: build → test → docker
-break/README.md              ← How to inject failure scenarios
-Dockerfile
+src/AutonomOpsTestApp/     – Console app with DeploymentService
+tests/AutonomOpsTestApp.Tests/ – xUnit tests
+Dockerfile                 – Multi-stage Docker build
+.github/workflows/ci.yml   – CI: build → test → docker
 ```
 
-## Running locally
+## CI Pipeline
 
-```bash
-dotnet test        # run all tests
-dotnet run --project src/AutonomOpsTestApp
+| Job | Runs | Expected |
+|-----|------|----------|
+| Build | `dotnet build` | ✅ passes |
+| Test  | `dotnet test`  | ✅ passes |
+| Docker Build | `docker build` | ❌ **fails** |
+
+## Active Bug
+
+The `Dockerfile` contains a `COPY` instruction that references a production
+config file which was never committed to this repository:
+
+```dockerfile
+# BUG: this file does not exist in the repo
+COPY config/appsettings.prod.json ./config/
 ```
 
-## CI Setup
+**Expected CI error:**
+```
+failed to solve: failed to read dockerfile:
+  COPY failed: file not found in build context or excluded by .dockerignore:
+  stat config/appsettings.prod.json: file does not exist
+```
 
-Set the following **repository variable** in GitHub → Settings → Variables → Actions:
+**Fix:** Remove (or comment out) the erroneous `COPY` line from `Dockerfile`.
 
-| Variable        | Value                |
-| --------------- | -------------------- |
-| `REGISTRY_HOST` | `<your-LAN-IP>:5000` |
-
-## Injecting failures
-
-See [break/README.md](break/README.md) for step-by-step instructions to reproduce:
-
-- NuGet version conflict
-- Failing unit test
-- Invalid workflow YAML
-- Missing environment variable
-- Docker build error
+This is a typical DevOps mistake — a developer referenced a local config file
+that was never tracked in git.
