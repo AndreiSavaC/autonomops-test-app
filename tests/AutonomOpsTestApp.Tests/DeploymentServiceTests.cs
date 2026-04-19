@@ -6,7 +6,7 @@ public class DeploymentServiceTests
 {
   private readonly DeploymentService _svc = new();
 
-  // ── Deploy ──────────────────────────────────────────────────────────────
+  // ── Deploy ─────────────────────────────────────────────────────────────
 
   [Fact]
   public void Deploy_ValidInput_ReturnsSuccess()
