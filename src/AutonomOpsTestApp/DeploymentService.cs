@@ -24,7 +24,7 @@ public class DeploymentService
     if (uptimeSeconds == 0)
       return new HealthCheckResult(serviceName, Status.Starting, "Service is starting.");
 
-    if (uptimeSeconds < 30)
+    if (uptimeSeconds < 300)
       return new HealthCheckResult(serviceName, Status.Degraded, "Service is still warming up.");
 
     return new HealthCheckResult(serviceName, Status.Healthy, "Service is healthy.");
