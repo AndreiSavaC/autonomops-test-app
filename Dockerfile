@@ -14,7 +14,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
-# BUG: this production config file was never committed to the repository
 COPY config/appsettings.prod.json ./config/
 
 ENTRYPOINT ["dotnet", "AutonomOpsTestApp.dll"]
