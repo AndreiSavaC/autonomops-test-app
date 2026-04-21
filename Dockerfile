@@ -14,6 +14,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
-COPY config/appsettings.prod.json ./config/
+# Intentionally broken in test scenario: file is missing from repo and fails CI Docker build.
+# COPY config/appsettings.prod.json ./config/
 
 ENTRYPOINT ["dotnet", "AutonomOpsTestApp.dll"]
