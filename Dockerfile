@@ -3,7 +3,7 @@ WORKDIR /src
 
 COPY ["AutonomOpsTestApp.sln", "."]
 COPY ["src/AutonomOpsTestApp/AutonomOpsTestApp.csproj", "src/AutonomOpsTestApp/"]
-COPY ["tests/AutonomOpsTestApp.Tests/AutonomOpsTestApp.Tests.csproj", "tests/AutonomOpsTestApp.Tests/"]
+COPY ["tests/<inexistent>.Tests/AutonomOpsTestApp.Tests.csproj", "tests/AutonomOpsTestApp.Tests/"]
 RUN dotnet restore
 
 COPY . .
