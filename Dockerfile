@@ -3,7 +3,7 @@ WORKDIR /src
 
 COPY ["AutonomOpsTestApp.sln", "."]
 COPY ["src/AutonomOpsTestApp/AutonomOpsTestApp.csproj", "src/AutonomOpsTestApp/"]
-COPY ["tests/AutonomOpsTestApp.Tests/AutonomOpsTestApp.Tests.csproj", "tests/AutonomOpsTestApp.Tests/"]
+COPY ["tests/<inexistent>.Tests/AutonomOpsTestApp.Tests.csproj", "tests/AutonomOpsTestApp.Tests/"]
 RUN dotnet restore
 
 COPY . .
@@ -13,8 +13,5 @@ RUN dotnet publish "AutonomOpsTestApp.csproj" -c Release -o /app/publish /p:UseA
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-
-# Intentionally broken in test scenario: file is missing from repo and fails CI Docker build.
-# COPY config/appsettings.prod.json ./config/
 
 ENTRYPOINT ["dotnet", "AutonomOpsTestApp.dll"]

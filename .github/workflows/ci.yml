@@ -2,7 +2,6 @@ name: CI
 
 on:
   push:
-    branches: ["main", "fix/**"]
   pull_request:
     branches: ["main"]
   workflow_dispatch:
@@ -17,7 +16,7 @@ jobs:
       - name: Setup .NET 9
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "9.0.x"
+          dotnet-version: "8.0.x"
 
       - name: Restore dependencies
         run: dotnet restore
@@ -35,7 +34,7 @@ jobs:
       - name: Setup .NET 9
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "9.0.x"
+          dotnet-version: "8.0.x"
 
       - name: Restore dependencies
         run: dotnet restore
