@@ -3,7 +3,7 @@ WORKDIR /src
 
 COPY ["AutonomOpsTestApp.sln", "."]
 COPY ["src/AutonomOpsTestApp/AutonomOpsTestApp.csproj", "src/AutonomOpsTestApp/"]
-COPY ["tests/<inexistent>.Tests/AutonomOpsTestApp.Tests.csproj", "tests/AutonomOpsTestApp.Tests/"]
+COPY ["tests/AutonomOpsTestApp.Tests/AutonomOpsTestApp.Tests.csproj", "tests/AutonomOpsTestApp.Tests/"]
 RUN dotnet restore
 
 COPY . .
@@ -15,4 +15,3 @@ WORKDIR /app
 COPY --from=build /app/publish .
 
 ENTRYPOINT ["dotnet", "AutonomOpsTestApp.dll"]
-
